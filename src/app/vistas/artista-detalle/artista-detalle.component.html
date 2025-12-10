@@ -1,0 +1,24 @@
+<div class="view-container" *ngIf="artista$ | async as artista; else loading">
+    <div class="artist-hero"
+        [style.backgroundImage]="'url(' + (artista.imagenes[0]?.url || 'assets/placeholder-artist.png') + ')'">
+
+        <div class="back-btn-container">
+            <button (click)="goBack()" class="back-btn">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+        </div>
+
+        <div class="overlay">
+            <h1 class="artist-name">{{ artista.nombre }}</h1>
+            <p class="followers-count" *ngIf="artista.generos && artista.generos.length">
+                {{ artista.generos.join(' • ') }}
+            </p>
+        </div>
+    </div>
+
+
+</div>
+
+<ng-template #loading>
+    <div class="loading">Cargando artista...</div>
+</ng-template>

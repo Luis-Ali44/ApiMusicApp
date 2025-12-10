@@ -1,0 +1,99 @@
+.view-container {
+    padding: 24px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.view-title {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+    color: #ffffff;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background-color: #222222;
+    padding: 16px;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card:hover {
+    background-color: #333333;
+}
+
+.card-image {
+    position: relative;
+    margin-bottom: 16px;
+    border-radius: 0;
+    overflow: hidden;
+    aspect-ratio: 1;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-btn-hover {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 48px;
+    height: 48px;
+    border-radius: 0;
+    background-color: #00ff00;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.filled {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+    font-size: 2rem;
+}
+
+.card:hover .play-btn-hover {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-content {
+    min-height: 60px;
+}
+
+.album-name {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 4px;
+}
+
+.artist-name {
+    color: #cccccc;
+    font-size: 0.85rem;
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    color: #cccccc;
+}

@@ -1,0 +1,17 @@
+<footer class="player-bar-simple">
+    <div class="simple-controls">
+        <button title="Anterior" (click)="player.prev()">
+            <span class="material-symbols-outlined large-icon">skip_previous</span>
+        </button>
+
+        <button title="Reproducir" (click)="player.togglePlay()">
+            <span class="material-symbols-outlined filled huge-icon">
+                {{ (isPlaying$ | async) ? 'pause_circle' : 'play_circle' }}
+            </span>
+        </button>
+
+        <button title="Siguiente" (click)="player.next()">
+            <span class="material-symbols-outlined large-icon">skip_next</span>
+        </button>
+    </div>
+</footer>

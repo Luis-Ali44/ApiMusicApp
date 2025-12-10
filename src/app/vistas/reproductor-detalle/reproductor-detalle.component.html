@@ -1,0 +1,42 @@
+<div class="full-player-container fade-in" *ngIf="data$ | async as data; else loading">
+
+
+    <div class="player-center">
+
+        <div class="big-cover-art">
+            <img [src]="data.album.imagenes[0]?.url" [alt]="data.album.nombre">
+        </div>
+
+
+        <div style="position: absolute; top: 24px; left: 24px;">
+            <button (click)="goBack()" style="color: white; transform: scale(1.5);">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+        </div>
+
+
+        <div class="player-main-info">
+            <h1 class="big-title">{{ data.album.nombre }}</h1>
+            <h2 class="big-artist" *ngFor="let artist of data.album.artistas">{{ artist.nombre }}</h2>
+
+            <div class="big-controls">
+                <button class="big-icon-btn" (click)="playerService.prev()"><span
+                        class="material-symbols-outlined">skip_previous</span></button>
+
+                <button class="big-play-btn" (click)="playerService.togglePlay()">
+                    <span class="material-symbols-outlined filled">
+                        {{ (playerService.isPlaying$ | async) ? 'pause_circle' : 'play_circle' }}
+                    </span>
+                </button>
+
+                <button class="big-icon-btn" (click)="playerService.next()"><span
+                        class="material-symbols-outlined">skip_next</span></button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<ng-template #loading>
+    <div class="loading">Cargando reproductor...</div>
+</ng-template>

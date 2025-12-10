@@ -1,0 +1,141 @@
+.view-container {
+    padding: 24px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    color: white;
+}
+
+.category-title {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    color: white;
+    font-weight: 700;
+}
+
+.mt-lg {
+    margin-top: 32px;
+}
+
+.horizontal-scroll {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 16px;
+}
+
+.artist-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-width: 140px;
+    cursor: pointer;
+}
+
+.artist-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 0;
+    object-fit: cover;
+    transition: transform 0.2s;
+}
+
+.artist-card:hover .artist-img {
+    transform: scale(1.05);
+}
+
+.artist-name {
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: #222222;
+    padding: 16px;
+    border-radius: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card:hover {
+    background: #333333;
+}
+
+.card-img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.card-title {
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.placeholder-search {
+    padding: 40px;
+    text-align: center;
+    color: #cccccc;
+}
+
+
+.track-list-search {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.track-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px;
+    background-color: #222222;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.track-item:hover {
+    background-color: #333333;
+}
+
+.track-img-small {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+}
+
+.track-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.track-name {
+    color: white;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.track-artist {
+    color: #cccccc;
+    font-size: 0.85rem;
+}

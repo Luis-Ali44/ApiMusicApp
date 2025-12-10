@@ -1,0 +1,93 @@
+.full-player-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+    /* Super high to cover Sidebar, PlayerControl, everything */
+    display: flex;
+    background-color: #000000;
+    padding: 0;
+    overflow: hidden;
+}
+
+.player-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    border-right: none;
+}
+
+.big-cover-art {
+    width: 400px;
+    height: 400px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.6);
+}
+
+.big-cover-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.player-main-info {
+    text-align: center;
+    max-width: 700px;
+}
+
+.big-title {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 8px;
+    line-height: 1.1;
+}
+
+.big-artist {
+    font-size: 1.5rem;
+    color: #888888;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.big-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.big-icon-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transform: scale(1.8);
+}
+
+.big-icon-btn:hover {
+    color: #cccccc;
+}
+
+.big-play-btn {
+    background: none;
+    border: none;
+    color: #00ff00;
+    cursor: pointer;
+    transform: scale(3.5);
+    transition: transform 0.2s;
+}
+
+.big-play-btn:hover {
+    transform: scale(3.8);
+}
+
+.loading {
+    padding: 40px;
+    color: white;
+    text-align: center;
+}

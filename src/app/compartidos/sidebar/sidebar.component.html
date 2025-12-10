@@ -1,0 +1,44 @@
+<nav class="sidebar">
+    <div class="logo">
+        <h2>Spotifai</h2>
+    </div>
+
+    <ul class="menu">
+        <li>
+            <a routerLink="/inicio" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                Inicio
+            </a>
+        </li>
+        <li>
+            <a routerLink="/busqueda" routerLinkActive="active">
+                Buscar
+            </a>
+        </li>
+    </ul>
+
+    <div class="current-playlist">
+        <h3>Reproduciendo Ahora</h3>
+
+
+        <ul class="tracklist" *ngIf="{ queue: queue$ | async, current: currentTrack$ | async } as data">
+            <li *ngFor="let track of data.queue; let i = index" [class.playing]="data.current?.id === track.id"
+                (click)="player.playTrack(track)">
+
+                <span class="number" *ngIf="data.current?.id !== track.id">{{ i + 1 }}</span>
+                <span class="number" *ngIf="data.current?.id === track.id">
+                    <span class="material-symbols-outlined" style="font-size: 1rem;">volume_up</span>
+                </span>
+
+                <div class="info">
+                    <span class="title">{{ track.nombre }}</span>
+                    <span class="artist">{{ track.artistas[0].nombre }}</span>
+                </div>
+            </li>
+        </ul>
+
+
+        <div *ngIf="(queue$ | async)?.length === 0" style="padding: 16px; color: #888; font-size: 0.8rem;">
+            La cola está vacía.
+        </div>
+    </div>
+</nav>

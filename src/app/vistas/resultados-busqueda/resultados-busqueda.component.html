@@ -1,0 +1,46 @@
+<div class="view-container fade-in">
+    <h2 class="section-title">Resultados de "{{ (route.queryParams | async)?.['q'] }}"</h2>
+
+    <ng-container *ngIf="resultados$ | async as res; else loading">
+
+
+        <section *ngIf="res.artistas.length > 0">
+            <h3 class="category-title">Artistas</h3>
+            <div class="horizontal-scroll">
+                <div class="artist-card" *ngFor="let artista of res.artistas" [routerLink]="['/artista', artista.id]">
+                    <img [src]="artista.imagenes[0]?.url || 'assets/placeholder-artist.png'" class="artist-img">
+                    <span class="artist-name">{{ artista.nombre }}</span>
+                </div>
+            </div>
+        </section>
+
+
+        <section *ngIf="res.albumes.length > 0" class="mt-lg">
+            <h3 class="category-title">Álbumes</h3>
+            <div class="grid-layout">
+                <div class="card" *ngFor="let album of res.albumes" [routerLink]="['/album', album.id]">
+                    <img [src]="album.imagenes[0]?.url" class="card-img">
+                    <span class="card-title">{{ album.nombre }}</span>
+                </div>
+            </div>
+        </section>
+
+
+        <section *ngIf="res.canciones.length > 0" class="mt-lg">
+            <h3 class="category-title">Canciones</h3>
+            <div class="grid-layout">
+                <div class="card" *ngFor="let track of res.canciones" [routerLink]="['/album', track.album?.id]">
+                    <img [src]="track.album?.imagenes?.[0]?.url" class="card-img">
+                    <span class="card-title">{{ track.nombre }}</span>
+                </div>
+            </div>
+        </section>
+
+    </ng-container>
+
+    <ng-template #loading>
+        <div class="placeholder-search">
+            <p>Escribe algo en la barra de búsqueda para empezar.</p>
+        </div>
+    </ng-template>
+</div>

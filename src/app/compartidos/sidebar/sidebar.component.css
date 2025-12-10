@@ -1,0 +1,111 @@
+.sidebar {
+    background-color: #000000;
+    width: 240px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 8px;
+    gap: 24px;
+    overflow: hidden;
+    /* Prevent sidebar itself from scrolling, let children scroll */
+}
+
+.logo {
+    padding: 0 16px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu li a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 16px;
+    color: #cccccc;
+    font-weight: 600;
+    border-radius: 0;
+    transition: color 0.2s, background-color 0.2s;
+    text-decoration: none;
+}
+
+.menu li a:hover,
+.menu li a.active {
+    color: #ffffff;
+    background-color: #333333;
+}
+
+.current-playlist {
+    margin-top: 16px;
+    border-top: 1px solid #333333;
+    padding-top: 16px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.current-playlist h3 {
+    padding: 0 16px;
+    margin-bottom: 16px;
+    color: #cccccc;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tracklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tracklist li {
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #cccccc;
+    border-radius: 0;
+    cursor: default;
+}
+
+.tracklist li:hover {
+    background-color: #222222;
+}
+
+.tracklist li.playing {
+    color: #00ff00;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.title {
+    color: inherit;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.artist {
+    color: #888888;
+    font-size: 0.75rem;
+}
+
+.number {
+    font-size: 0.9rem;
+    width: 24px;
+    text-align: center;
+}

@@ -1,0 +1,25 @@
+<div class="view-container fade-in">
+    <h1 class="view-title">Nuevos Lanzamientos</h1>
+
+    <div class="grid-layout" *ngIf="nuevosLanzamientos$ | async as albums; else loading">
+        <div class="card" *ngFor="let album of albums" [routerLink]="['/album', album.id]">
+            <div class="card-image">
+                <img [src]="album.imagenes[0]?.url" [alt]="album.nombre">
+                <button class="play-btn-hover">
+                    <span class="material-symbols-outlined filled">play_arrow</span>
+                </button>
+            </div>
+            <div class="card-content">
+                <h3 class="album-name">{{ album.nombre }}</h3>
+                <p class="artist-name">{{ album.artistas[0].nombre }}</p>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #loading>
+        <div class="loading-container">
+            <div class="spinner"></div>
+            <p>Cargando música...</p>
+        </div>
+    </ng-template>
+</div>
